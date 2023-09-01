@@ -39,7 +39,7 @@ function App() {
       return res;
     } catch {
       const errorJson = {
-        error: `${val}`,
+        error: `Please Enter a valid Python Dictionary`,
       };
       return errorJson;
     }
