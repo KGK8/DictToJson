@@ -43,13 +43,17 @@ function App() {
     }
   }
   const handleEditorInput = (value) => {
+    if (!val) {
+      setCodeState("");
+      return false;
+    }
     try {
       console.log("NEW", value);
-
       const formattedValue = JSON.stringify(
         formatJSON(
           value
             .replace(/'/g, '"')
+            .replace(/None/g, "null")
             .replace(/False/g, "false")
             .replace(/True/g, "true")
         ),
@@ -97,7 +101,6 @@ function App() {
             height="75vh"
             width="100%"
             theme="vs-dark"
-            defaultValue="{}"
             defaultLanguage="json"
             onChange={handleEditorInput}
             options={options}
