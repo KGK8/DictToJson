@@ -50,7 +50,7 @@ function App() {
         formatJSON(
           value
             .replace(/'/g, '"')
-            .replace(/"True"/g, "true")
+            .replace(/False/g, "false")
             .replace(/True/g, "true")
         ),
         null,
