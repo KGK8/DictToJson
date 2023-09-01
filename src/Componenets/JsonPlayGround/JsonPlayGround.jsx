@@ -11,7 +11,7 @@ function App() {
   const [clicked, setClicked] = useState(false);
 
   // Monacos Configurations
-  const options = {
+  let options = {
     readOnly: false,
     minimap: { enabled: false },
     quickSuggestions: {
@@ -30,7 +30,9 @@ function App() {
       horizontal: "hidden",
     },
   };
-
+  
+  let outPutOptions = { ...options, readOnly: true };
+  
   function formatJSON(val) {
     try {
       const res = JSON.parse(val);
@@ -43,7 +45,7 @@ function App() {
     }
   }
   const handleEditorInput = (value) => {
-    if (!val) {
+    if (!value) {
       setCodeState("");
       return false;
     }
@@ -126,7 +128,7 @@ function App() {
             theme="vs-dark"
             value={codeState ? codeState : JSON.stringify({})}
             defaultLanguage="json"
-            options={options}
+            options={outPutOptions}
           />
           {/*To Show Formatted JSON Output End's*/}
         </div>
