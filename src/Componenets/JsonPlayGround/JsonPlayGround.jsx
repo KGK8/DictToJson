@@ -3,6 +3,7 @@ import Editor from "@monaco-editor/react";
 import { FaRegClipboard } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Footer/Footer";
 
 function App() {
   // Used To StoreEdited Content
@@ -30,9 +31,9 @@ function App() {
       horizontal: "hidden",
     },
   };
-  
+
   let outPutOptions = { ...options, readOnly: true };
-  
+
   function formatJSON(val) {
     try {
       const res = JSON.parse(val);
@@ -133,7 +134,9 @@ function App() {
           {/*To Show Formatted JSON Output End's*/}
         </div>
       </div>
-
+      {/* Footer Div Start's */}
+      <Footer homeActive={true} />
+      {/* Footer Div End's */}
       {/*Notification Component Start's*/}
       <ToastContainer
         position="top-right"
