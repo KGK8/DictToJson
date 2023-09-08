@@ -11,6 +11,9 @@ const Footer = (prop) => {
       <Link to="/About" className={prop?.aboutUs ? "activeMenu" : ""}>
         About Us
       </Link>
+      <Link to="/ContactUs" className={prop?.contactUs ? "activeMenu" : ""}>
+        Contact US
+      </Link>
       {/* <Link to="#">Contact Us</Link> */}
       <Link to="#" style={{ marginLeft: "auto" }}>
         <FaGithub />
